@@ -8,31 +8,43 @@ public class ValidPassword {
     }
 
     public boolean isValid(String password) {
-        if(password.length() >= 8 && password.length() <= 25){
-            return true;
-        }else {
-            return false;
-        }
+        return password.length() >= 8 && password.length() <= 25;
     }
 
     public boolean hasUpperCase(String password) {
         char[] charArray = password.toCharArray();
-        for(int i = 0; i < charArray.length; i++){
-            if(Character.isUpperCase(charArray[i])){
+        for (char c : charArray) {
+            if (Character.isUpperCase(c)) {
                 return true;
             }
         }
         return false;
     }
 
-    public boolean isNumeric(String password){
-        char[] charArray = password.toCharArray();
-        for(int i = 0; i < charArray.length; i++){
-            if(Character.isDigit(charArray[i])){
+    public boolean isNumeric(String password) {
+        char charArray[] = password.toCharArray();
+        for (int i = 0; i < password.length(); i++) {
+            if (Character.isDigit(charArray[i])) {
                 return true;
             }
         }
         return false;
     }
+    public boolean isAlpha(String password) {
+        char charArray[] = password.toCharArray();
+        for(int i = 0; i < password.length(); i++){
+            if(Character.isLetter(charArray[i])){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isAlphaNumeric(String password){
+        return isNumeric(password) && isAlpha(password);
+    }
+
+
+
 
 }

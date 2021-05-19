@@ -22,28 +22,44 @@ public class ValidPasswordTest {
     @DisplayName("Password length")
     public void validLengthTest(){
         ValidPassword pw = new ValidPassword();
-        assertTrue(pw.checkPassword("Password"));
+        assertTrue(pw.isValid("password"));
     }
     @Test
-    @DisplayName("Too short password")
+    @DisplayName("Too short")
     public void tooShort(){
         ValidPassword pw = new ValidPassword();
-        assertEquals(false, pw.isValid("help"));
+        assertFalse(pw.isValid("help"));
     }
 
     @Test
-    @DisplayName("Has password UpperCase")
+    @DisplayName("Uppercase")
     public void hasUpperCaseTest(){
         ValidPassword pw = new ValidPassword();
-        assertEquals(true, pw.hasUpperCase("Password"));
+        assertTrue(pw.hasUpperCase("Password"));
     }
 
     @Test
-    @DisplayName("Contains password numbers")
+    @DisplayName("Numbers check")
     public void numbersTest(){
         ValidPassword pw = new ValidPassword();
-        assertTrue(pw.isNumeric("password1"));
+        assertTrue(pw.isNumeric("1234"));
     }
+    @Test
+    @DisplayName("Letter check")
+    public void lettersTest(){
+        ValidPassword pw = new ValidPassword();
+        assertTrue(pw.isAlpha("password"));
+    }
+
+    @Test
+    @DisplayName("Numbers and Letter check")
+    public void alphaNumberTest(){
+        ValidPassword pw = new ValidPassword();
+        assertTrue(pw.isAlphaNumeric("password123"));
+    }
+
+
+
 
 
 }
