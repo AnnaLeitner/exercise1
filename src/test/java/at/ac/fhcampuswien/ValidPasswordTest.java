@@ -67,10 +67,10 @@ public class ValidPasswordTest {
 
 
     @Test
-    @DisplayName("Special character check")
+    @DisplayName("Check Password")
     public void passwordCheck(){
         ValidPassword pw = new ValidPassword();
-        assertTrue(pw.checkPassword("P1ssword("));
+        assertTrue(pw.checkPassword("P4ssw0rd#"));
     }
 
 }
