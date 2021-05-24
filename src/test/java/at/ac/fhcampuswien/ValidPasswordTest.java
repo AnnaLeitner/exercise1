@@ -32,7 +32,7 @@ public class ValidPasswordTest {
     }
 
     @Test
-    @DisplayName("Uppercase")
+    @DisplayName("Uppercase check")
     public void hasUpperCaseTest(){
         ValidPassword pw = new ValidPassword();
         assertTrue(pw.hasUpperCase("Password"));
@@ -52,14 +52,25 @@ public class ValidPasswordTest {
     }
 
     @Test
-    @DisplayName("Numbers and Letter check")
+    @DisplayName("Numbers and letter check")
     public void alphaNumberTest(){
         ValidPassword pw = new ValidPassword();
         assertTrue(pw.isAlphaNumeric("password123"));
     }
 
+    @Test
+    @DisplayName("Special character check")
+    public void specialCharTest(){
+        ValidPassword pw = new ValidPassword();
+        assertTrue(pw.specialChar("()#$?!%/@pass"));
+    }
 
 
-
+    @Test
+    @DisplayName("Special character check")
+    public void passwordCheck(){
+        ValidPassword pw = new ValidPassword();
+        assertTrue(pw.checkPassword("P1ssword("));
+    }
 
 }

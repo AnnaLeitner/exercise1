@@ -4,7 +4,7 @@ import java.lang.*;
 public class ValidPassword {
 
     public boolean checkPassword(String password){
-        return isValid(password) && hasUpperCase(password);
+        return isValid(password) && hasUpperCase(password) && isAlphaNumeric(password) && specialChar(password);
     }
 
     public boolean isValid(String password) {
@@ -22,7 +22,7 @@ public class ValidPassword {
     }
 
     public boolean isNumeric(String password) {
-        char charArray[] = password.toCharArray();
+        char[] charArray = password.toCharArray();
         for (int i = 0; i < password.length(); i++) {
             if (Character.isDigit(charArray[i])) {
                 return true;
@@ -31,7 +31,7 @@ public class ValidPassword {
         return false;
     }
     public boolean isAlpha(String password) {
-        char charArray[] = password.toCharArray();
+        char[] charArray = password.toCharArray();
         for(int i = 0; i < password.length(); i++){
             if(Character.isLetter(charArray[i])){
                 return true;
@@ -45,6 +45,15 @@ public class ValidPassword {
     }
 
 
+    public boolean specialChar(String password) {
+        String specials = "()#$?!%/@";
 
+        for(int i = 0; i < specials.length(); i++){
+            if(password.contains(Character.toString(specials.charAt(i)))) {
+                return true;
+            }
 
+        }
+        return false;
+    }
 }
