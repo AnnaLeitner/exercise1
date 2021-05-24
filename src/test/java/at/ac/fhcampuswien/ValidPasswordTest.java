@@ -32,39 +32,18 @@ public class ValidPasswordTest {
     }
 
     @Test
-    @DisplayName("Uppercase check")
-    public void hasUpperCaseTest(){
-        ValidPassword pw = new ValidPassword();
-        assertTrue(pw.hasUpperCase("Password"));
-    }
-
-    @Test
-    @DisplayName("Numbers check")
-    public void numbersTest(){
-        ValidPassword pw = new ValidPassword();
-        assertTrue(pw.isNumeric("1234"));
-    }
-    @Test
-    @DisplayName("Letter check")
-    public void lettersTest(){
-        ValidPassword pw = new ValidPassword();
-        assertTrue(pw.isAlpha("password"));
-    }
-
-    @Test
-    @DisplayName("Numbers and letter check")
+    @DisplayName("Check if string contains numbers and at least one Uppercase")
     public void alphaNumberTest(){
         ValidPassword pw = new ValidPassword();
-        assertTrue(pw.isAlphaNumeric("password123"));
+        assertTrue(pw.isUpperLowerAlphaNumeric("Password123"));
     }
 
     @Test
     @DisplayName("Special character check")
     public void specialCharTest(){
         ValidPassword pw = new ValidPassword();
-        assertTrue(pw.specialChar("()#$?!%/@pass"));
+        assertTrue(pw.specialChar("password()#$?!%/@"));
     }
-
 
     @Test
     @DisplayName("Check Password")
@@ -72,5 +51,14 @@ public class ValidPasswordTest {
         ValidPassword pw = new ValidPassword();
         assertTrue(pw.checkPassword("P4ssw0rd#"));
     }
+
+    //Erweiterung
+    @Test
+    @DisplayName("Number occurs three times")
+    public void occurThreeTimesTest(){
+        ValidPassword pw = new ValidPassword();
+        assertTrue(pw.occurThree("password112211"));
+    }
+
 
 }
