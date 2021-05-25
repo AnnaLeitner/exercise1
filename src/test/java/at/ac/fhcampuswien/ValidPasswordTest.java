@@ -54,10 +54,24 @@ public class ValidPasswordTest {
 
     //Erweiterung
     @Test
-    @DisplayName("Number occurs three times")
+    @DisplayName("Number occurs three times check")
     public void occurThreeTimesTest(){
         ValidPassword pw = new ValidPassword();
         assertTrue(pw.occurThree("password112211"));
+    }
+
+    @Test
+    @DisplayName("Ongoing Numbers check")
+    public void ongoingNumbersTest(){
+        ValidPassword pw = new ValidPassword();
+        assertTrue(pw.ongoingNumbers("p1s23"));
+    }
+
+    @Test
+    @DisplayName("Ongoing Numbers check")
+    public void checkPassword2Test(){
+        ValidPassword pw = new ValidPassword();
+        assertTrue(pw.checkPassword2("P4ssw0rd#12"));
     }
 
 

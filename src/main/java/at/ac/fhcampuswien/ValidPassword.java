@@ -58,8 +58,7 @@ public class ValidPassword {
                     char cj = charArray[j];
                     if (ci == cj) {
                         count++;
-                    }
-                    if(ci != cj){
+                    }else{
                         count = 0;
                     }
                 }
@@ -72,6 +71,32 @@ public class ValidPassword {
     }
 
 
+    public boolean ongoingNumbers(String password) {
+        char[] charArray = password.toCharArray();
 
+        for(int i = 0; i < charArray.length; i++){
 
+            if(Character.isDigit(charArray[i])){
+                int count = 1;
+                for (int j = i+1; j < charArray.length; j++) {
+
+                    if (charArray[j] == charArray[j-1]+1){
+                        count++;
+
+                        if(count > 2){
+                            return false;
+                        }
+                    }
+                    else{
+                        break;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean checkPassword2(String password) {
+        return checkPassword(password) && occurThree(password) && ongoingNumbers(password);
+    }
 }
