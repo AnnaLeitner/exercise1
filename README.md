@@ -1,2 +1,2 @@
-#exercise1
+exercise1
 ## https://github.com/AnnaLeitner/exercise1.git

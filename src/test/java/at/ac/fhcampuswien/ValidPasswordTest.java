@@ -68,7 +68,7 @@ public class ValidPasswordTest {
     }
 
     @Test
-    @DisplayName("Ongoing Numbers check")
+    @DisplayName("Check Password extension")
     public void checkPassword2Test(){
         ValidPassword pw = new ValidPassword();
         assertTrue(pw.checkPassword2("P4ssw0rd#12"));
