@@ -61,13 +61,13 @@ public class ValidPasswordTest {
     @DisplayName("Valid: Check Password")
     public void passwordCheck(){
         ValidPassword pw = new ValidPassword();
-        assertTrue(pw.checkPassword("P4ssw0rd#"), "Valid password");
+        assertTrue(pw.checkPassword2("P4ssw0rd#"), "Valid password");
     }
     @Test
     @DisplayName("Invalid: Check Password")
     public void falseCheckPassword(){
         ValidPassword pw = new ValidPassword();
-        assertFalse(pw.checkPassword("Anna"), "Not a valid password");
+        assertFalse(pw.checkPassword2("Anna"), "Not a valid password");
     }
 
     //Erweiterung
@@ -99,15 +99,15 @@ public class ValidPasswordTest {
 
     @Test
     @DisplayName("Valid: Check Password extension")
-    public void checkPassword2Test(){
+    public void checkPasswordTest(){
         ValidPassword pw = new ValidPassword();
-        assertTrue(pw.checkPassword2("P4ssw0rd#1112"), "Valid password");
+        assertTrue(pw.checkPassword("P4ssw0rd#1112"), "Valid password");
     }
     @Test
     @DisplayName("Invalid: Check Password extension")
-    public void falseCheckPassword2Test(){
+    public void falseCheckPasswordTest(){
         ValidPassword pw = new ValidPassword();
-        assertFalse(pw.checkPassword2("Anna123333"), "Not a valid password");
+        assertFalse(pw.checkPassword("Anna123333"), "Not a valid password");
     }
 
 }

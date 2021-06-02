@@ -4,7 +4,7 @@ import java.lang.*;
 
 public class ValidPassword {
 
-    public boolean checkPassword(String password){
+    public boolean checkPassword2(String password){
         return isValid(password) && isUpperLowerAlphaNumeric(password) && specialChar(password);
     }
 
@@ -70,7 +70,6 @@ public class ValidPassword {
         return true;
     }
 
-
     public boolean ongoingNumbers(String password) {
         char[] charArray = password.toCharArray();
 
@@ -96,7 +95,7 @@ public class ValidPassword {
         return true;
     }
 
-    public boolean checkPassword2(String password) {
-        return checkPassword(password) && occurThree(password) && ongoingNumbers(password);
+    public boolean checkPassword(String password) {
+        return checkPassword2(password) && occurThree(password) && ongoingNumbers(password);
     }
 }
